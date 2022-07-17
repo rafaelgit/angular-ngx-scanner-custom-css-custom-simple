@@ -1,0 +1,24 @@
+<div class="container">
+  <zxing-scanner
+    class="gradient"
+    (scanSuccess)="onCodeResult($event)"
+  ></zxing-scanner>
+
+  <div class="top-left"></div>
+  <div class="top-right"></div>
+  <div class="bottom-left"></div>
+  <div class="bottom-right"></div>
+  <div class="centered"></div>
+</div>
+
+<section class="results">
+  <div>
+    <small>Result:</small>
+    <div *ngIf="qrResultString">
+      <div>
+        <strong>{{ qrResultString }}</strong>
+      </div>
+      <button (click)="clearResult()">&times;</button>
+    </div>
+  </div>
+</section>
